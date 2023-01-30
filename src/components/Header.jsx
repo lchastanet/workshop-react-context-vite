@@ -5,10 +5,8 @@ export default function Header() {
   return (
     <header>
       <nav>
-        <NavLink exact to="/">
-          Home
-        </NavLink>
-        <NavLink exact to="/profile">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/profile">
           <UserAvatar />
         </NavLink>
       </nav>
