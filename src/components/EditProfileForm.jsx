@@ -1,15 +1,19 @@
-export default function EditProfileForm({
-  currentUserName,
-  setCurrentUserName,
-  currentUserAvatar,
-  setCurrentUserAvatar,
-}) {
+import { useUserContext } from "../contexts/UserContext.jsx";
+
+export default function EditProfileForm() {
+  const {
+    currentUserName,
+    setCurrentUserName,
+    currentUserAvatar,
+    setCurrentUserAvatar,
+  } = useUserContext();
+
   const handleNameInput = (e) => {
-    setCurrentUserName(e.target.value)
-  }
+    setCurrentUserName(e.target.value);
+  };
   const handleAvatarUrlInput = (e) => {
-    setCurrentUserAvatar(e.target.value)
-  }
+    setCurrentUserAvatar(e.target.value);
+  };
   return (
     <form>
       <h2>Your informations</h2>
@@ -27,5 +31,5 @@ export default function EditProfileForm({
         />
       </label>
     </form>
-  )
+  );
 }

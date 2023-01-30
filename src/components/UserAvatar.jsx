@@ -1,4 +1,8 @@
-export default function UserAvatar({ currentUserAvatar, currentUserName }) {
+import { useUserContext } from "../contexts/UserContext";
+
+export default function UserAvatar() {
+  const { currentUserAvatar, currentUserName } = useUserContext();
+
   return (
     <div className="avatar">
       <img
@@ -9,5 +13,5 @@ export default function UserAvatar({ currentUserAvatar, currentUserName }) {
         alt={currentUserName}
       />
     </div>
-  )
+  );
 }
