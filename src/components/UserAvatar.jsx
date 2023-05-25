@@ -1,12 +1,16 @@
-export default function UserAvatar({ currentUserAvatar, currentUserName }) {
+import { useUserContext } from "../contexts/UserContext"
+
+export default function UserAvatar() {
+  const { currentUser } = useUserContext()
+
   return (
     <div className="avatar">
       <img
         src={
-          currentUserAvatar ||
+          currentUser.avatar ||
           "https://www.lewesac.co.uk/wp-content/uploads/2017/12/default-avatar.jpg"
         }
-        alt={currentUserName}
+        alt={currentUser.name}
       />
     </div>
   )
